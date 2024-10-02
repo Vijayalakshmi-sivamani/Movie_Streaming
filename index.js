@@ -2,10 +2,13 @@ import express from "express";
 import dotenv from "dotenv";
 import bodyparser from "body-parser";
 import mongoose from "mongoose";
+import historyRouter from "./routes/historyRoute.js";
 
 const app = express();
 dotenv.config();
 const PORT = process.env.PORT;
+
+app.use("/historyRouter", historyRouter);
 
 mongoose
   .connect("mongodb+srv://sri:adhisri@cluster0.guzzq.mongodb.net/movie_name")
